@@ -15,6 +15,9 @@ try:
 
 except sqlite3.Error, e:
 	print "Error %s" % e.args[0]
+	sys.exit(1)
 
-def main():
+finally:
 
+	if con:
+		con.close()
