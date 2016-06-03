@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import sqlite3 as lite
+import sqlite3
 import sys
 
-con = lite.connect('test.db')
+con = sqlite3.connect('test.db')
 
 with con:
     

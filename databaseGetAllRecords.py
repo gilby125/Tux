@@ -10,4 +10,4 @@ with con:
     cur.execute("SELECT * FROM Cars")
     rows = cur.fetchall()
     for row in rows:
-        print row
+        print(row)

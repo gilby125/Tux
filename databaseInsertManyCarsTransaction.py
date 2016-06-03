@@ -1,9 +1,9 @@
 #!/bin/python3.5
-import sqlite
-import sys
+import sqlite3
 
+con = None
 try:
-	con = sqlite.connect('test.db')
+	con = sqlite3.connect('test.db')
 	cur = con.cursor()
 	cur.executescript("""
 		DROP TABLE IF EXISTS CARS;
@@ -15,12 +15,12 @@ try:
 		""")
 	con.commit()
 
-except sqlite.Error, e:
+except sqlite3.Error:
 
 	if con:
 		con.rollback()
 
-	print "Error %s:" % e.args[0]
+	print("Error %s:" % e.args[0])
 	sys.exit(1)
 
 finally:

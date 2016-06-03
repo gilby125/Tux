@@ -3,13 +3,14 @@
 import sqlite3
 import sys
 
-con = lite.connect('test.db')
+con = sqlite3.connect('test.db')
 
 with con:
 
 	cur = con.cursor()
+	
 	cur.execute('SELECT SQULITE_VERSION()')
 
 	data = cur.fetchone()
 
-	print "SQLite version %s" % data
+	print("SQLite version %s" % data)

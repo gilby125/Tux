@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-import sqlite3 as lite
+import sqlite3
 import sys
 
-con = lite.connect(':memory:')
+con = sqlite3.connect(':memory:')
 
 with con:
     
@@ -15,4 +15,4 @@ with con:
     cur.execute("INSERT INTO Friends(Name) VALUES ('Robert');")
         
     lid = cur.lastrowid
-    print "The last Id of the inserted row is %d" % lid
+    print("The last Id of the inserted row is %d" % lid)

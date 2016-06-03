@@ -1,7 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/python3.5
 
 import sqlite3
-import sys
 
 cars = (
     (1, 'Chevy', 24000),
@@ -14,7 +13,7 @@ cars = (
 )
 
 
-con = sqlite.connect('test.db')
+con = sqlite3.connect('test.db')
 
 with con:
 

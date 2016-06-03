@@ -16,6 +16,4 @@ with con:
         
         if row == None:
             break
-
-        print row.__type__
-        # print("%s %s %i") % row[0] % row[1] % row[2]
+        print(row[0],row[1],row[2])
