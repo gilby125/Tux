@@ -1,3 +1,5 @@
-#!/bin/python3.5
+#!/bin/python
+
 
 def main():
+	print("MASTER")

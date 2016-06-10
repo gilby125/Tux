@@ -1,4 +1,10 @@
-#!/bin/python3.5
+#!/bin/python
+
+import smtp
+import pop3
+import imap
+import tux_rss
 
 
-def main():
+
+print("EMAIL")

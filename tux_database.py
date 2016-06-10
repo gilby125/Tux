@@ -1,6 +1,7 @@
-#!/bin/python3.5
+#!/bin/python
+
 import sqlite3
-import sys
+
 
 con = None
 
@@ -11,10 +12,11 @@ try:
 
 	data = cur.fechone()
 
-	print "SQLITE version %s" % data
+	print("SQLITE version %s" % data)
 
-except sqlite3.Error, e:
-	print "Error %s" % e.args[0]
+except sqlite3.Error:
+	print("Error %s" % sqlite3.Error.args[0])
+
 
 def main():
-
+	print("DATABASE")
