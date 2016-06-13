@@ -1,6 +1,3 @@
-#!/bin/python
-
-
 # entity module that contains the class tuxPayload data members
 # and method members. Inherit the tuxPayload in a class called
 # tuxPayloadFeed - add a data member to hold the feed title.
@@ -8,8 +5,10 @@
 
 class tuxPayload:
 	self.params = ["URI", "EMAIL", "DATE", "COST"]
-	def __init__(self):
-		self.Date = 
+	def __init__(self, rssFeed, emailAddress):
+		#self.Date = 
+		self.rssFeed = rssFeed
+		self.emailAddresss = emailAddress
 		print("Created a new tuxPayload object")
 	def setParam(self, item, arg):
 		if(!(arg in self.param)):

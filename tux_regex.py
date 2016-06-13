@@ -1,8 +1,6 @@
-#!/bin/python
-
+# tux_regexp
 import re
-import datetime
-import tux_rss
+import tux_oop, tux_database
 
 email = input('Email address:\t').upper()
 # This will match \ USERNAME@SITE.SUB.DOMAIN \
@@ -22,4 +20,6 @@ if(form != None):
 	except ValueError:
 		dt = datetime.date.__format__(...)
 
-
+def UserInput() :
+	rssFeed = raw_input("Enter the URI of an rss feed:")
+	emailAddress = raw_input("Enter the designated email address:")
