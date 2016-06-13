@@ -7,20 +7,26 @@
 
 
 class tuxPayload:
+	self.params = ["URI", "EMAIL", "DATE", "COST"]
 	def __init__(self):
+		self.Date = 
 		print("Created a new tuxPayload object")
-	def setURI(self, arg):
-		self.uri = arg
+	def setParam(self, item, arg):
+		if(!(arg in self.param)):
+			self.item = arg
+		else:
+			print("Please retry with a proper field name from:\n\t",self.params)
+			return
+	def getParam(self, item, arg):
+		if(!(arg.upper() in self.param)):
+			print("Please retry with a proper field name from:\n\t",self.params)
+			return
+		self.item = arg
 
 
 class tuxPayloadFeed (tuxPayload):
+	self.params.append("TITLE")
 	def __init__(self, title):
 		self.title = title
 		print("New tuxPayloadFeed object title is:",self.title)
-
-	def setTitle(self, arg):
-		self.title = arg
-
-	def getTitle(self):
-		print("Feed title is:",self.title)
  
