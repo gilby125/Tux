@@ -1,10 +1,6 @@
 #!/bin/python
 
-import smtp
-import pop3
-import imap
-import tux_rss
-
-
+import smtplib
+from email.mime.text import MIMEText
 
 print("EMAIL")

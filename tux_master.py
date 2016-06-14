@@ -8,3 +8,4 @@ tuxpay1 = tux_regexp.UserInput()
 
 print "feed: " + tuxPay1.rssFeed
 print "address: " + tuxPay1.emailAddress
+print "date: " + tuxPay1.date
