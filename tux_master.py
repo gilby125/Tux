@@ -1,8 +1,13 @@
 # tux_master
 
-import tux_regexp, tux_database, tux_email, tux_rss, tux_oop, subprocess
+import tux_regexp
+import tux_database
+import tux_email
+import tux_rss
+import tux_oop
+import subprocess
 
-subprocess.call('clear',shell=True)
+subprocess.call('clear', shell=True)
 
 tuxpay1 = tux_regexp.UserInput()
 
