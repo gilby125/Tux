@@ -3,6 +3,10 @@ import re
 import tux_oop
 import tux_database
 
+'''
+Accept user input, populate tux entity and write the event status to database
+'''
+
 email = input('Email address:\t').upper()
 # This will match \ USERNAME@SITE.SUB.DOMAIN \
 regex = re.compile('[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}')
@@ -20,6 +24,7 @@ if(form != None):
         dt = datetime.date.__format__(form)
     except ValueError:
         dt = datetime.date.__format__(...)
+        print('Incorrect format, using default')
 
 
 def UserInput():
