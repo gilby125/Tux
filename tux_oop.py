@@ -1,3 +1,7 @@
+# tux_oop
+# Ryan Gavigan
+# 06/20/16
+
 import datetime
 
 

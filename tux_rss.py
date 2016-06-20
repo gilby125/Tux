@@ -1,4 +1,7 @@
 # tux_rss
+# Ryan Gavigan
+# 06/20/16
+
 import feedparser
 
 '''

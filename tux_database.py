@@ -1,9 +1,17 @@
-import sqlite3
-
+# tux_database
+# Ryan Gavigan
+# 06/20/16
+import sqlite3 as sql
 
 con = None
+
 try:
-    con = sqlite3.connect('tux.db')
+    con = sql.connect('tux.db')
+except sql.Error:
+	file = open('tux.db','w+')
+	con = sql.connect('tux.db')
+
+try:
     cur = con.cursor()
 	print((cur.description()))
     cur.execute('SELECT SQLITE_VERSION()')

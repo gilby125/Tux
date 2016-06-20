@@ -1,4 +1,6 @@
 # tux_master
+# Ryan Gavigan
+# 06/20/16
 
 import tux_regexp
 import tux_database
