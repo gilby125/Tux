@@ -15,11 +15,11 @@ class tuxPayload:
              cost		value to perform service
 	'''
     def __init__(self, rssFeed, emailAddress, cost):
-        self.params = ["RSS", "EMAIL", "DATE", "COST"]
-        self.rssFeed = rssFeed
-        self.emailAddresss = emailAddress
-        self.date = date.today()
-        self.cost = cost
+        self.params = ["URI", "EMAIL", "DATE", "COST"]
+        self.URI = rssFeed
+        self.EMAIL = emailAddress
+        self.DATE = date.today()
+        self.COST = cost
         print("Created a new tuxPayload object")
 
     def setParam(self, item, arg):
