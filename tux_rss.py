@@ -13,4 +13,4 @@ python_wiki_rss_url = "http://www.python.org/cgi-bin/moinmoin/" \
 
 feed = feedparser.parse(python_wiki_rss_url)
 
-print feed["url"]
+print(feed['url'])
