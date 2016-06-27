@@ -1,6 +1,6 @@
 # tux_email
 # Ryan Gavigan
-# 06/20/16
+# 06/26/16
 import smtplib
 from email.mime.text import MIMEText
 
@@ -25,3 +25,4 @@ class tuxEmail:
 		print("Sending email....")
 		s.sendmail(emailAddress, emailAddress, msg.as_string())
 		s.quit()
+		print("Email sent!")

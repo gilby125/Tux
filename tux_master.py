@@ -1,7 +1,6 @@
 # tux_master
 # Ryan Gavigan
-# 06/20/16
-
+# 06/26/16
 import tux_regexp
 import tux_database
 import tux_email
@@ -11,11 +10,12 @@ import subprocess
 
 subprocess.call('clear', shell=True)
 
-tuxpay1 = tux_regexp.UserInput()
+tuxPF = tux_regexp.UserInput()
 
-print "feed: " + tuxPay1.rssFeed
-print "address: " + tuxPay1.emailAddress
-print "date: " + tuxPay1.date
+print ("Feed URI: %s", tuxPF['URI'])
+print ("Feed title: %s", tuxPF['TITLE'])
+print ("Email address: %s", + tuxPF['EMAIL'])
+print ("Date: %s", tuxPF['DATE'])
 
 # Order of processes:
 # Process1:(tux_regexp.py) accept user input and populate the tux entity and
