@@ -1,10 +1,9 @@
 # tux_database
 # Ryan Gavigan
-# 06/27/16
+# 06/26/16
+import random
 import sqlite3 as sql
 from contextlib import closing
-from datetime import date
-import random
 
 
 def dbConnect():
@@ -15,13 +14,16 @@ def dbConnect():
 	try:
 		con = sql.connect('tux.db')
 		cur = con.cursor()
-	except sql.err:
+	except sql.Error:
 		file = open('tux.db', 'w+')
 		con = sql.connect('tux.db')
+		print("ln 16: TEST")
 	try:
 		cur.execute('SELECT * FROM tux.sqlite_master WHERE type = "table";')
+		print("ln 19: TEST")
 		data = cur.fetchall()
-	except sq.OperationalError:
+		print(data)
+	except sql.OperationalError:
 		cur.executescript("""
 						CREATE TABLE Events(EventId INT, EventType TEXT, EventDate);
 						CREATE TABLE Types(Abbv TEXT, Full TEXT);
@@ -35,21 +37,18 @@ def dbConnect():
 	return con
 
 
-def insertEvent(eventType, dt):
-	if(dt is None or not date.__instancecheck__(dt)):
-		dt = date.today()
-	if(eventType not in ['IO', 'IF', 'RO', 'RF'. 'EO', 'EF']):
-		print "That event type is not valid."
+def insertEvent(table, eventType, date):
+	if(eventType not in ['IO', 'IF', 'RO', 'RF', 'EO', 'EF']):
+		print("That event type is not valid.")
 		return insertEvent("IO", dt)
 	con = dbConnect()
 	try:
 		id = 0
 		while(True):
-			# Randomize EventIds
 			id = random.random()
-			keys = cur.execute('SELECT * FROM Events WHERE EventId = id')
+			keys = cur.execute('SELECT * FROM table WHERE EventId = id')
 			if(id not in keys):
 				break
 		cur = con.cursor()
-		cur.execute("INSERT INTO Events VALUES(id, eventType, dt)")
+		cur.execute("INSERT INTO table VALUES(id, eventType, date)")
 	con.close()

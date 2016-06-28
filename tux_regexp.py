@@ -9,7 +9,7 @@ import tux_rss
 
 def UserInput():
 	'''
-	Accepts/checks user input for valid email regex -- other fields not checked
+	Accepts and checks user input for validity of email regex -- other fields are not checked
 	'''
 	uri = input("Enter the URI of an rss feed: ")
 	title = tux_rss.getTitle(uri)
@@ -18,11 +18,11 @@ def UserInput():
 		regex = re.compile('[A-Z0-9._%+-]+@([A-Z0-9-]?+\.)+[A-Z]{2,6}')
 		matchObj = re.search(regex, email)
 		if(matchObj is not None and matchObj.span()[1] == len(email)):
-			print "Email address accepted!\n"
+			print("Email address accepted!\n")
 			break
 		else:
-			print matchObj
-			print "That's not a proper email address, please try again. '%s'\n" email
+			print(matchObj)
+			print("That's not a proper email address, please try again. '%s'\n", email)
 	while(True):
 		# Automatically generate datetime.date object with current date
 		form = input('Enter a datetime format if you would like: ')
