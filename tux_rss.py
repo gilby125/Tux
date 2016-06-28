@@ -4,16 +4,22 @@
 
 import feedparser
 import tux_oop
+import tux_database
 
 '''
 Get RSS feed then write the event status to the database
 '''
 
+
 def getTitle(uri):
 	try:
 		feed = feedparser.parse(uri)
-		print("rss ln 15 %s", feed.get('title'))
 	except feed.bozo_exception:
-		print ("rss ln 15 "+ feed.bozo)
+		insertEvent('RF')
 		return feed.bozo
-	return feed.get('title')
+	try:
+		title = feed.pop('title')
+		insertEvent('RO')
+		return title
+	except KeyError:
+		return insertEvent('RF')
