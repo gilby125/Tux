@@ -19,20 +19,20 @@ class tuxPayload:
 		self.EMAIL = emailAddress
 		self.DATE = date.today()
 		self.COST = cost
-		print("Created a new tuxPayload object")
+		print "Created a new tuxPayload object"
 
 	@classmethod
 	def setParam(self, item, arg):
 		if (arg in self.param):
 			self.item = arg
 		else:
-			print("Please retry with one of the following fields:\n\t{}", format(self.params))
+			print "Please retry with one of the following fields:\n\t{}", format(self.params)
 			return
 
 	@classmethod
 	def getParam(self, item, arg):
 		if (arg.upper() not in self.param):
-			print("Retry with proper field name from:\n\t{}", format(self.params))
+			print "Retry with proper field name from:\n\t{}" format(self.params)
 			return
 		self.item = arg
 

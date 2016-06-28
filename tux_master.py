@@ -12,10 +12,10 @@ subprocess.call('clear', shell=True)
 
 tuxPF = tux_regexp.UserInput()
 
-print("Feed URI: %s", tuxPF['URI'])
-print("Feed title: %s", tuxPF['TITLE'])
-print("Email address: %s", + tuxPF['EMAIL'])
-print("Date: %s", tuxPF['DATE'])
+print "Feed URI: %s", tuxPF['URI']
+print "Feed title: %s", tuxPF['TITLE']
+print "Email address: %s", + tuxPF['EMAIL']
+print "Date: %s", tuxPF['DATE']
 
 # Order of processes:
 # Process1:(tux_regexp.py) accept user input and populate the tux entity and

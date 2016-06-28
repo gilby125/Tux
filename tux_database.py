@@ -39,7 +39,7 @@ def insertEvent(eventType, dt):
 	if(dt is None or not date.__instancecheck__(dt)):
 		dt = date.today()
 	if(eventType not in ['IO', 'IF', 'RO', 'RF'. 'EO', 'EF']):
-		print("That event type is not valid.")
+		print "That event type is not valid."
 		return insertEvent("IO", dt)
 	con = dbConnect()
 	try:

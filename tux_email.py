@@ -15,13 +15,13 @@ class tuxEmail:
 
 	def sendEmail(self, emailAddress, tuxPayload):
 		emailAddress = input("Enter the recipient email address: ")
-		print(emailAddress)
+		print emailAddress
 		msg = MIMEText('Content of email')
 		msg['Subject'] = 'Subject'
 		msg['From'] = emailAddress
 		msg['To'] = emailAddress
-		print("Sending email....")
-		print(smtplib.SMTP.verify(emailAddress))
+		print "Sending email...."
+		print smtplib.SMTP.verify(emailAddress)
 		try:
 			smtplib.SMTP.connect('smtp.psu.edu')
 		except smtplib.SMTPConnectError:
@@ -32,4 +32,4 @@ class tuxEmail:
 			insertEvent("EF")
 		s.quit()
 		insertEvent("EO")
-		print("Email sent!")
+		print "Email sent!"

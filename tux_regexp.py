@@ -18,11 +18,11 @@ def UserInput():
 		regex = re.compile('[A-Z0-9._%+-]+@([A-Z0-9-]?+\.)+[A-Z]{2,6}')
 		matchObj = re.search(regex, email)
 		if(matchObj is not None and matchObj.span()[1] == len(email)):
-			print("Email address accepted!\n")
+			print "Email address accepted!\n"
 			break
 		else:
-			print(matchObj)
-			print("That's not a proper email address, please try again. '%s'\n", email)
+			print matchObj
+			print "That's not a proper email address, please try again. '%s'\n" email
 	while(True):
 		# Automatically generate datetime.date object with current date
 		form = input('Enter a datetime format if you would like: ')
@@ -31,7 +31,7 @@ def UserInput():
 				dt = datetime.date.__format__(form)
 			except ValueError:
 				dt = datetime.date.__format__(...)
-				print('Incorrect format, using default (YYYY-MM-DD)')
+				print "Incorrect format, using default (YYYY-MM-DD)"
 				break
 	while(True):
 		cost = input("Enter a dollar amount: (ommitting $) ")
@@ -41,7 +41,7 @@ def UserInput():
 		if(matchObj is not None and matchObj.span()[1]):
 			break
 		else:
-			print("This is not a correct dollar amount, please try again.\n")
+			print "This is not a correct dollar amount, please try again.\n"
 	ret = tuxPayloadFeed.__init__(rssFeed, emailAddress, df, cost)
 	ret.setParam('TITLE', title)
 	return ret
