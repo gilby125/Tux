@@ -1,7 +1,6 @@
 # tux_oop
 # Ryan Gavigan
-# 06/26/16
-
+# 06/29/16
 import datetime
 
 
@@ -18,7 +17,7 @@ class tuxPayload:
 		self.params = ["URI", "EMAIL", "DATE", "COST"]
 		self.URI = rssFeed
 		self.EMAIL = emailAddress
-		self.DATE = date.today()
+		self.DATE = datetime.datetime.now()
 		self.COST = cost
 
 	@classmethod

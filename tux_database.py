@@ -1,6 +1,6 @@
 # tux_database
 # Ryan Gavigan
-# 06/26/16
+# 06/29/16
 import random
 import sqlite3 as sql
 from contextlib import closing
@@ -37,18 +37,19 @@ def dbConnect():
 	return con
 
 
-def insertEvent(table, eventType, date):
+def insertEvent(table, eventType, dt):
 	if(eventType not in ['IO', 'IF', 'RO', 'RF', 'EO', 'EF']):
 		print("That event type is not valid.")
 		return insertEvent("IO", dt)
+	if(dt is None):
+		dt = datetime.d
 	con = dbConnect()
-	try:
-		id = 0
-		while(True):
-			id = random.random()
-			keys = cur.execute('SELECT * FROM table WHERE EventId = id')
-			if(id not in keys):
-				break
-		cur = con.cursor()
-		cur.execute("INSERT INTO table VALUES(id, eventType, date)")
+        id = 0
+        while(True):
+                id = random.random()
+                keys = cur.execute('SELECT * FROM table WHERE EventId = id')
+                if(id not in keys):
+                        break
+        cur = con.cursor()
+        cur.execute("INSERT INTO table VALUES(id, eventType, dt)")
 	con.close()

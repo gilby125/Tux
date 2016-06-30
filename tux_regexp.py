@@ -1,6 +1,6 @@
 # tux_regexp
 # Ryan Gavigan
-# 06/26/16
+# 06/29/16
 import re
 import tux_oop
 import tux_database
@@ -31,7 +31,7 @@ def UserInput():
 				dt = datetime.date.__format__(form)
 			except ValueError:
 				dt = datetime.date.__format__(...)
-				print "Incorrect format, using default (YYYY-MM-DD)"
+				print("Incorrect format, using default (YYYY-MM-DD)")
 				break
 	while(True):
 		cost = input("Enter a dollar amount: (ommitting $) ")
@@ -41,7 +41,7 @@ def UserInput():
 		if(matchObj is not None and matchObj.span()[1]):
 			break
 		else:
-			print "This is not a correct dollar amount, please try again.\n"
+			print("This is not a correct dollar amount, please try again.\n")
 	ret = tuxPayloadFeed.__init__(rssFeed, emailAddress, df, cost)
 	ret.setParam('TITLE', title)
 	return ret
